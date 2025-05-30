@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-    const elementoQuote = document.getElementById('quote');
+    const quoteElement = document.getElementById('quote');
     const button = document.getElementById('new-quote');
 
-    const quuotes = [
+    const quotes = [
         "Acredite em você e tudo será possível.",
         "Não espere por oportunidades, crie-as.",
         "Grandes coisas nunca vêm da zona de conforto.",
@@ -10,4 +10,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
         "O sucesso é a soma de pequenos esforços diários.",
         "Cada dia é uma nova chance de recomeçar."
     ]
+
+    function generateQuote(){
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteElement.textContent = quotes[randomIndex];
+    }
+
+    button.addEventListener('click', generateQuote);
 })
